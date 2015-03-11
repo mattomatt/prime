@@ -1,0 +1,31 @@
+<ion-view title="<span class='titleCentered'>{{day | date:'EEE dd MMM'}}</span>">
+    <ion-nav-buttons side="left">
+        <button class="button button-energized button-outline item-button-left" ng-click="prevDay()">
+            {{dayBefore | date:'EEEE'}}
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-energized button-outline icon-right" ng-click="nextDay()">
+            {{dayAfter | date:'EEEE'}}
+        </button>
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        <!--<ion-list>-->
+        <!--<ion-item ng-repeat="course in courses">-->
+        <!--{{course.name}}-->
+        <!--</ion-item>-->
+        <!--</ion-list>-->
+        <div class="card {{course.course.starred?'energized-bg':''}}" ng-repeat="course in courses | orderBy:'start' track by $index">
+            {{course.course.starred?'energized-bg':''}} {{course.start}} - {{course.end}} - Area {{course.room}} <div class="flright " ng-show="course.needsBooking"><i class="ion-calendar"></i></div>
+            <div class="row item item-divider">
+                <div class="col col-67" ui-sref="courseDetail({id:course.course.id})">{{course.course.name}}</div>
+                <div class="flright col col-33">
+                    <div class="flright " ng-show="course.course.benessere"><img class="icon" src="img/benessere.png"/></div>
+                    <div class="flright " ng-show="course.course.tonicita"><img class="icon" src="img/tonicita.png"/></div>
+                    <div class="flright " ng-show="course.course.cardio"><img class="icon" src="img/cardio.png"/></div>
+                    <div class="flright " ng-show="course.course.snellimento"><img class="icon" src="img/snellimento.png"/></div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

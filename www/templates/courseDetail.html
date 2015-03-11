@@ -1,0 +1,48 @@
+<ion-view view-title="{{corso.name}}">
+    <ion-nav-buttons side="left">
+        <button  class="button button-energized button-outline item-button-left" ng-click="goBack();">
+            <i class="ion-arrow-left-c"></i>
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="list card">
+
+            <div class="item">
+                <div class="flright " ng-show="corso.benessere"><img class="icon" src="img/benessere.png"/></div>
+                <div class="flright " ng-show="corso.tonicita"><img class="icon" src="img/tonicita.png"/></div>
+                <div class="flright " ng-show="corso.cardio"><img class="icon" src="img/cardio.png"/></div>
+                <div class="flright " ng-show="corso.snellimento"><img class="icon" src="img/snellimento.png"/></div>
+            </div>
+
+            <div class="item item-body">
+                <img class="full-image" src="img/example.jpg">
+                <p>
+                    Qui ci vanno la descrizione del corso, le informazioni sull'istruttore ecc...
+                </p>
+                <p>
+                    <a href="#" class="subdued">1 Mi Piace</a>
+                    <a href="#" class="subdued">5 Commenti</a>
+                </p>
+            </div>
+
+            <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item" href="#">
+                    <i class="icon ion-thumbsup"></i>
+                    Mi piace
+                </a>
+                <a class="tab-item" href="#">
+                    <i class="icon ion-chatbox"></i>
+                    Commenta
+                </a>
+                <a class="tab-item" href="#">
+                    <i class="icon ion-share"></i>
+                    Condividi
+                </a>
+            </div>
+            <div class="item-divider">Calendario</div>
+            <div class="item" ng-repeat="sessione in corso.sessions">
+                {{giorni[sessione.dayOfWeek]}} - {{sessione.start}} - {{sessione.end}} - Area {{sessione.room}}
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

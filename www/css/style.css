@@ -1,0 +1,16 @@
+/* Empty. Add your own CSS if you like */
+.flright
+{
+    float: right;
+}
+
+.flright img
+{
+    width: 22px;
+}
+
+.titleCentered
+{
+    display: block;
+    text-align: center;
+}

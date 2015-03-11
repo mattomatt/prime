@@ -1,0 +1,8 @@
+{
+  "name": "prime",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "angular-i18n",
+    "ionic": "driftyco/ionic-bower#1.0.0-beta.14"
+  }
+}

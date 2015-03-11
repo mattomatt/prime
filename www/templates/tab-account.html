@@ -1,0 +1,17 @@
+
+<ion-view view-title="Preferenze">
+  <ion-content>
+    <ion-list>
+      <ion-item  class="item-toggle" ng-repeat="course in courses | orderBy:'name'">
+        <div ui-sref="courseDetail({id:course.id})">{{course.name}}</div>
+        <label class="toggle toggle-energized">
+          <input type="checkbox" ng-model="course.starred" ng-change="account.setStarredCourse(course.id,course.starred)">
+          <div class="track">
+            <div class="handle"></div>
+
+          </div>
+        </label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
